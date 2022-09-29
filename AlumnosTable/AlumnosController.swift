@@ -12,6 +12,8 @@ class AlumnosController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     @IBOutlet weak var tvAlumnos: UITableView!
     var Alumnos : [Alumno] = []
+    var Materias1 : [Materia] = []
+    var Materias2 : [Materia] = []
     
     //Altura de celda
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,11 +39,22 @@ class AlumnosController: UIViewController, UITableViewDelegate, UITableViewDataS
         return celda!
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        Alumnos.append(Alumno(nombre: "Max Rivera", matricula: "199177", carrera: "Multimedia", edad: "21"))
-        Alumnos.append(Alumno(nombre: "Daney Arvayo", matricula: "199468", carrera: "Multimedia", edad: "23"))
+        Materias1.append(Materia(nombre: "Calculo", codigo: "856199"))
+        Materias1.append(Materia(nombre: "Redes", codigo: "856198"))
+        Materias1.append(Materia(nombre: "Diosito", codigo: "666"))
+        
+        Materias2.append(Materia(nombre: "Mexico", codigo: "856197"))
+        Materias2.append(Materia(nombre: "Diosito", codigo: "666"))
+        Materias2.append(Materia(nombre: "Moviles", codigo: "856191"))
+        
+        
+        Alumnos.append(Alumno(nombre: "Max Rivera", matricula: "199177", carrera: "Multimedia", edad: "21", materias: Materias1))
+        Alumnos.append(Alumno(nombre: "Daney Arvayo", matricula: "199468", carrera: "Multimedia", edad: "23", materias: Materias2))
         
     }
     
